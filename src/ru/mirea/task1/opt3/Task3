@@ -1,0 +1,25 @@
+package ru.mirea.lab1;
+import java.util.Scanner;
+
+public class Task3 {
+    public static void main(String[] args) {
+        int[] mas = new int[5];
+        int a = 0;
+        for (int i =0; i < mas.length; i++) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Введите целое число: ");
+            if (sc.hasNextInt()) {
+                a = sc.nextInt();
+                mas[i] = a;
+            }
+        }
+        int sum = 0;
+        for (int i =0; i < mas.length; i++) {
+            sum += mas[i];
+        }
+        int middle = sum / mas.length;
+        System.out.print("Cумма элементов целочисленного массива: " + sum + "\n");
+        System.out.print("Среднее арифметическое элементов целочисленного массива: " + middle);
+    }
+
+}
