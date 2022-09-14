@@ -13,13 +13,33 @@ public class Task3 {
                 mas[i] = a;
             }
         }
+
         int sum = 0;
         for (int i =0; i < mas.length; i++) {
             sum += mas[i];
         }
-        int middle = sum / mas.length;
+        System.out.print("  Через цикл for\n");
         System.out.print("Cумма элементов целочисленного массива: " + sum + "\n");
-        System.out.print("Среднее арифметическое элементов целочисленного массива: " + middle);
-    }
 
+        sum = 0;
+        int i = 0;
+        do {
+            sum += mas[i];
+            i += 1;
+        } while (i < mas.length);
+        System.out.print("  Через цикл do while\n");
+        System.out.print("Cумма элементов целочисленного массива: " + sum + "\n");
+
+        sum = 0;
+        i = 0;
+        while (i < mas.length) {
+            sum += mas[i];
+            i += 1;
+        }
+        System.out.print("  Через цикл while\n");
+        System.out.print("Cумма элементов целочисленного массива: " + sum + "\n");
+
+
+
+}
 }
