@@ -1,97 +1,92 @@
+
 package ru.mirea.task5;
 
 
-abstract class Dish {
+abstract class Dog {
     private String name;
-    private String shape;
-    private int size;
+    private int age;
 
-    public Dish(String name, String shape, int size) {
+    public Dog(String name, int age) {
         this.name = name;
-        this.shape = shape;
-        this.size = size;
+        this.age = age;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getSize() {
-        return size;
-    }
-
-    public String getShape() {
-        return shape;
+    public int getAge() {
+        return age;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public void setShape(String shape) {
-        this.shape = shape;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public abstract String toString();
 }
 
-class Cup extends Dish {
-    private String cupType;
+class BullDog extends Dog {
+    private int strength;
 
-    public Cup(String name, String shape, int size, String cupType) {
-        super(name, shape, size);
-        this.cupType = cupType;
+    public BullDog(String name, int age, int strength) {
+        super(name, age);
+        this.strength = strength;
     }
 
-    public String getCupType() {
-        return cupType;
+    public int getStrength() {
+        return strength;
     }
 
-    public void setCupType(String cupType) {
-        this.cupType = cupType;
+    public void setStrength(int strength) {
+        this.strength = strength;
     }
 
     public String toString() {
-        String tmp = "Cup: name=" + super.getName() + ", shape=" + super.getShape();
-        tmp += ", size=" + super.getSize() + ", cup_type=" + this.getCupType();
+        String tmp = "BullDog: name=" + super.getName() + ", age=" + super.getAge();
+        tmp += ", strength=" + this.getStrength();
         return tmp;
     }
 }
 
-class Plate extends Dish {
-    private int deepth;
+class York extends Dog {
+    private boolean fluffy;
 
-    public Plate(String name, String shape, int size, int deepth) {
-        super(name, shape, size);
-        this.deepth = deepth;
+    public York(String name, int age, boolean fluffy) {
+        super(name, age);
+        this.fluffy = fluffy;
     }
 
-    public int getDeepth() {
-        return deepth;
+    public boolean isFluffy() {
+        return fluffy;
     }
 
-    public void setDeepth(int deepth) {
-        this.deepth = deepth;
+    public void setFluffy(boolean fluffy) {
+        this.fluffy = fluffy;
     }
 
     public String toString() {
-        String tmp = "Plate: name=" + super.getName() + ", shape=" + super.getShape();
-        tmp += ", size=" + super.getSize() + ", deepth=" + this.getDeepth();
+        String tmp = "York: name=" + super.getName() + ", age=" + super.getAge();
+        tmp += ", is_fluffy=" + this.isFluffy();
         return tmp;
     }
 }
 
-public class TestDish {
+public class TestDog {
     public static void main(String[] args) {
-        // Cup test
-        Cup objectCup = new Cup("Cup1", "round", 13, "golden");
-        System.out.println(objectCup.toString());
-        // Plate test
-        Plate objectPlate = new Plate("Plate1", "square", 5, 2);
-        System.out.println(objectPlate.toString());
+        // BullDog test
+        BullDog objectBullDog = new BullDog("Ben", 7, 10);
+        objectBullDog.setAge(5);
+        objectBullDog.setStrength(9);
+        System.out.println(objectBullDog.toString());
+        // York test
+        York objectYork = new York("Jack", 2, true);
+        objectYork.setFluffy(false);
+        System.out.println(objectYork.toString());
+
     }
 }
